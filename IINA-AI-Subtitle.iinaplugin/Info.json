@@ -1,0 +1,17 @@
+{
+  "name": "AI Subtitle",
+  "version": "1.0.0",
+  "identifier": "com.example.iina-ai-subtitle",
+  "author": {
+    "name": "IINA AI Subtitle Plugin",
+    "email": "user@example.com"
+  },
+  "entry": "main.js",
+  "permissions": [
+    "show-osd",
+    "file-system",
+    "show-alert"
+  ],
+  "description": "Generate subtitles locally using AI speech recognition",
+  "homepage": "https://github.com/example/iina-ai-subtitle"
+}
