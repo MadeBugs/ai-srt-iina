@@ -13,5 +13,7 @@
     "show-alert"
   ],
   "description": "Generate subtitles locally using AI speech recognition",
-  "homepage": "https://github.com/example/iina-ai-subtitle"
+  "homepage": "https://github.com/MadeBugs/ai-srt-iina",
+  "ghRepo": "MadeBugs/ai-srt-iina",
+  "ghVersion": 1
 }

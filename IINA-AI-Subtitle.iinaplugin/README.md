@@ -18,15 +18,12 @@ curl -L -o ~/.cache/whisper-cpp/models/ggml-small.en-q8_0.bin \
 
 ## Installation
 
-### Dev Mode (IINA >= 1.3.0)
+Install from **GitHub repository** (supports automatic updates):
 
-```bash
-iina-plugin link .
-```
-
-### Manual
-
-Copy `IINA-AI-Subtitle.iinaplugin` to `~/Library/Application Support/com.colliderli.iina/plugins/`.
+1. Open IINA → **Preferences → Plugins**
+2. Click **Install from GitHub...**
+3. Enter the repository URL
+4. Click **Install**
 
 ## Usage
 

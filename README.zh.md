@@ -57,22 +57,14 @@ curl -L -o ~/.cache/whisper-cpp/models/ggml-small.en-q8_0.bin \
 
 ## 安装
 
-### 开发模式（推荐）
+通过 **GitHub 仓库安装**（支持自动更新）：
 
-```bash
-git clone https://github.com/example/ai-srt-iina.git
-cd ai-srt-iina
-iina-plugin link IINA-AI-Subtitle.iinaplugin
-```
+1. 打开 IINA → **偏好设置 → 插件**
+2. 点击 **从 GitHub 安装...**
+3. 输入仓库地址：`https://github.com/MadeBugs/ai-srt-iina`
+4. 点击 **安装**
 
-### 手动安装
-
-将 `IINA-AI-Subtitle.iinaplugin` 复制到 IINA 的插件目录：
-
-```bash
-cp -r IINA-AI-Subtitle.iinaplugin \
-  ~/Library/Application\ Support/com.colliderli.iina/plugins/
-```
+> 发布新版本后，IINA 会自动检测并提示你更新。
 
 ### 验证安装
 
