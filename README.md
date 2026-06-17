@@ -86,19 +86,18 @@ Open IINA, go to `Plugins` in the menu bar. You should see **AI Subtitle** with 
 
 ```
 ai-srt-iina/
-├── IINA-AI-Subtitle.iinaplugin/   # IINA plugin bundle
-│   ├── Info.json                   # Plugin metadata & permissions
-│   ├── main.js                     # Entry point, menu, orchestration
-│   ├── lib/
-│   │   ├── cache-manager.js        # Path parsing & cache logic
-│   │   ├── dependency-checker.js   # Checks for ffmpeg, whisper, model
-│   │   ├── progress-parser.js      # Real-time stderr progress parsing
-│   │   └── subtitle-generator.js   # Audio extraction + transcription
-│   ├── __tests__/                  # Jest test suite
-│   └── README.md                   # Plugin-specific documentation
+├── Info.json                       # Plugin metadata & permissions
+├── main.js                         # Entry point, menu, orchestration
+├── lib/
+│   ├── cache-manager.js            # Path parsing & cache logic
+│   ├── dependency-checker.js       # Checks for ffmpeg, whisper, model
+│   ├── progress-parser.js          # Real-time stderr progress parsing
+│   └── subtitle-generator.js       # Audio extraction + transcription
+├── __tests__/                      # Jest test suite
 ├── package.json                    # Test dependencies
 ├── jest.config.js                  # Jest configuration
-└── README.md                       # This file
+├── README.md                       # Documentation (English)
+└── README.zh.md                    # Documentation (Chinese)
 ```
 
 ### Architecture

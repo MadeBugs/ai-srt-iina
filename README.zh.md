@@ -86,16 +86,14 @@ curl -L -o ~/.cache/whisper-cpp/models/ggml-small.en-q8_0.bin \
 
 ```
 ai-srt-iina/
-├── IINA-AI-Subtitle.iinaplugin/   # IINA 插件包
-│   ├── Info.json                   # 插件元数据和权限声明
-│   ├── main.js                     # 入口文件，菜单注册，流程编排
-│   ├── lib/
-│   │   ├── cache-manager.js        # 路径解析与缓存管理
-│   │   ├── dependency-checker.js   # 检查 ffmpeg、whisper、模型文件
-│   │   ├── progress-parser.js      # 实时进度解析（stderr）
-│   │   └── subtitle-generator.js   # 音频提取 + 转写核心逻辑
-│   ├── __tests__/                  # Jest 测试套件
-│   └── README.md                   # 插件内部文档（英文）
+├── Info.json                       # 插件元数据和权限声明
+├── main.js                         # 入口文件，菜单注册，流程编排
+├── lib/
+│   ├── cache-manager.js            # 路径解析与缓存管理
+│   ├── dependency-checker.js       # 检查 ffmpeg、whisper、模型文件
+│   ├── progress-parser.js          # 实时进度解析（stderr）
+│   └── subtitle-generator.js       # 音频提取 + 转写核心逻辑
+├── __tests__/                      # Jest 测试套件
 ├── package.json                    # 测试依赖
 ├── jest.config.js                  # Jest 配置
 ├── README.md                       # 项目说明（英文）

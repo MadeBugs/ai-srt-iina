@@ -5,6 +5,6 @@ module.exports = {
     "**/__tests__/**/*.spec.js",
   ],
   collectCoverageFrom: [
-    "IINA-AI-Subtitle.iinaplugin/lib/**/*.js",
+    "lib/**/*.js",
   ],
 };
