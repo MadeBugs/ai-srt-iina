@@ -2,33 +2,46 @@ var depChecker = require("../lib/dependency-checker.js");
 
 describe("dependency-checker", function () {
   describe("checkWhisperBinary", function () {
-    it("returns found=true when whisper-cpp is in path", function () {
-      var mockEnv = {
-        fileInPath: function (name) {
-          return name === "whisper-cpp";
-        },
-      };
-      var result = depChecker.checkWhisperBinary(mockEnv);
-      expect(result.found).toBe(true);
-      expect(result.binary).toBe("whisper-cpp");
-    });
-
-    it("falls back to whisper-cli when whisper-cpp is not found", function () {
+    it("returns found=true when whisper-cli is in path", function () {
       var mockEnv = {
         fileInPath: function (name) {
           return name === "whisper-cli";
         },
+        fileExists: function () { return false; },
       };
       var result = depChecker.checkWhisperBinary(mockEnv);
       expect(result.found).toBe(true);
       expect(result.binary).toBe("whisper-cli");
     });
 
+    it("falls back to whisper-cpp when whisper-cli is not found", function () {
+      var mockEnv = {
+        fileInPath: function (name) {
+          return name === "whisper-cpp";
+        },
+        fileExists: function () { return false; },
+      };
+      var result = depChecker.checkWhisperBinary(mockEnv);
+      expect(result.found).toBe(true);
+      expect(result.binary).toBe("whisper-cpp");
+    });
+
+    it("finds whisper via Homebrew path fallback", function () {
+      var mockEnv = {
+        fileInPath: function () { return false; },
+        fileExists: function (path) {
+          return path === "/opt/homebrew/bin/whisper-cli";
+        },
+      };
+      var result = depChecker.checkWhisperBinary(mockEnv);
+      expect(result.found).toBe(true);
+      expect(result.path).toBe("/opt/homebrew/bin/whisper-cli");
+    });
+
     it("returns found=false when neither binary is available", function () {
       var mockEnv = {
-        fileInPath: function () {
-          return false;
-        },
+        fileInPath: function () { return false; },
+        fileExists: function () { return false; },
       };
       var result = depChecker.checkWhisperBinary(mockEnv);
       expect(result.found).toBe(false);

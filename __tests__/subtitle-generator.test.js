@@ -83,6 +83,7 @@ describe("subtitle-generator", function () {
         fileInPath: function () {
           return true;
         },
+        fileExists: function () { return true; },
         exec: function (binary, args, opts, onStderr) {
           return Promise.resolve();
         },
@@ -100,6 +101,9 @@ describe("subtitle-generator", function () {
         fileInPath: function () {
           return false;
         },
+        fileExists: function () {
+          return false;
+        },
       };
 
       return sg.runWhisper("/tmp/audio.wav", "/model.bin", "/tmp/output", null, mockEnv)
@@ -114,6 +118,7 @@ describe("subtitle-generator", function () {
         fileInPath: function () {
           return true;
         },
+        fileExists: function () { return true; },
         exec: function () {
           return Promise.reject(new Error("whisper failed"));
         },
@@ -133,6 +138,7 @@ describe("subtitle-generator", function () {
         fileInPath: function () {
           return true;
         },
+        fileExists: function () { return true; },
         exec: function (binary, args, opts, onStderr) {
           if (onStderr) {
             onStderr("progress line 1");
@@ -186,6 +192,7 @@ describe("subtitle-generator", function () {
       var envCalls = 0;
       var mockEnv = {
         fileInPath: function () { return false; },
+        fileExists: function () { return false; },
         randomString: function () { return "abc123"; },
         exec: function (binary, args, opts, onStderr) {
           // First call is ffmpeg, succeeding
@@ -204,6 +211,7 @@ describe("subtitle-generator", function () {
       var callCount = 0;
       var mockEnv = {
         fileInPath: function () { return true; },
+        fileExists: function () { return true; },
         randomString: function () { return "abc123"; },
         exec: function (binary, args, opts, onStderr) {
           callCount++;
@@ -238,6 +246,7 @@ describe("subtitle-generator", function () {
 
       var mockEnv = {
         fileInPath: function () { return true; },
+        fileExists: function () { return true; },
         randomString: function () { return "abc123"; },
         exec: function (binary, args, opts, onStderr) {
           callCount++;
